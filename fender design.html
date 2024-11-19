@@ -1,0 +1,1431 @@
+
+<!doctype html> 
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+		
+	<meta name="robots" content="noindex,nofollow" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://d3ocdjih6hdmey.cloudfront.net/default/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://d3ocdjih6hdmey.cloudfront.net/default/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed apple-touch-icon" href="https://d3ocdjih6hdmey.cloudfront.net/default/images/favicon.ico" type="image/x-icon">
+
+    <title>Projects :: SKILL-LYNC</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://d3ocdjih6hdmey.cloudfront.net/assets/css/custom.css">
+    <link rel="stylesheet" href="https://d3ocdjih6hdmey.cloudfront.net/assets/css/global.css">
+    <link rel="stylesheet" href="https://d3ocdjih6hdmey.cloudfront.net/assets/css/project.css">
+    <link rel="stylesheet" href="https://d3ocdjih6hdmey.cloudfront.net/assets/css/fileupload.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "icybimn9co");
+    clarity("set", "userId", "harishajay79@gmail.com");
+    clarity("set", "Customer ID", "3915");
+	clarity("set", "Email Address", "harishajay79@gmail.com");
+	clarity("set", "First Name", "Harinath");
+	clarity("set", "Last Name", "E.M");
+	clarity("set", "Account RefID", "011dd7da3ea16419602dfe77");
+	clarity("set", "Account Name", "SKILL-LYNC");
+    clarity("set", "Batch RefID", "hTQ8yvoz5WvlIsqTaDjw");
+	clarity("set", "Batch Name", "Skill Lync Batch 1 2023");
+	clarity("set", "Organization Domain", "lms.skill-lync.com");
+</script>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/plugins/table/ui/trumbowyg.table.min.css">
+    
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+    <div id="loadOnboardingSection"></div>
+
+<div id="LogoutModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box">
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+                <h4 class="modal-title w-100">Are you sure?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to logout?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a href="/oauth/logout" class="btn btn-danger">Yes, Logout</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Raise Ticket Modal-->
+<div class="modal fade" id="RaiseTicketModal" tabindex="-1" role="dialog" aria-labelledby="raiseTicketLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal_md modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white" id="raiseTicketLabel"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/ticket-icon.png" class="mr-2">How can we help?</h5>
+                <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form id="createATicketForm">
+                <div class="modal-body">
+                    <div class="raise_ticket_card">
+                        <input type="hidden" name="ticketCourseRef" id="ticketCourseRef" value="0" required>
+                        <div class="form-group">
+                            <label class="modal_title">Choose the related issue for your case <span class="text-danger">*</span></label>
+                            <select class="form-control form-control-sm" name="ticketTag" id="ticketTag" required>
+                                <option value=""> --- No Case Selected --- </option>
+                                                                    <option class="" value="Next Course Access">Next Course Access</option>
+                                                                    <option class="" value="Mentoring Session Request">Mentoring Session Request</option>
+                                                                    <option class="" value="Get in Touch">Get in Touch</option>
+                                                                    <option class="" value="Certificate Request">Certificate Request</option>
+                                                                    <option class="" value="Laptop Concerns">Laptop Concerns</option>
+                                                                    <option class="" value="Referral">Referral</option>
+                                                                    <option class="" value="Internship">Internship</option>
+                                                                    <option class="" value="Dashboard Related Issues">Dashboard Related Issues</option>
+                                                                    <option class="" value="Escalation">Escalation</option>
+                                                                    <option class="d-none" value="Career Services Qureries">Career Services Qureries</option>
+                                                                    <option class="" value="Others">Others</option>
+                                                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="modal_title">Subject <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control form-control-sm" placeholder="Briefly summarize your question or issue" name="ticketSubject" id="ticketSubject" maxlength=250 required>
+                            <div class="modal_sub_txt">Maximum characters upto 250<span class="text-danger">*</span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="modal_title">Description <span class="text-danger">*</span></label>
+                            <textarea class="form-control" rows="3" placeholder="Describe your question or issue in detail" name="ticketDescription" id="ticketDescription" required></textarea>
+                            <div class="modal_sub_txt">Maximum characters upto 500<span class="text-danger">*</span></div>
+                        </div>
+
+
+                        <div class="mt-3 mb-3">
+                            <div id="ticketFileAttachment"></div>
+                            <div class="">
+                                <input id="ticketFileUpload" type="file" name="spacefiles[]" multiple="multiple" hidden>
+                                <a style="cursor:pointer;" onclick='$("#ticketFileUpload").click();' class="btn btn-sm btn-outline-primary" id="attach"><i class="bi bi-paperclip"></i>Attach files</a>
+                                <div class="modal_sub_txt">Max 5MB Allowed <span class="text-danger">*</span></div>
+                            </div>
+                        </div>
+                        <div id="ticketFileUploadProgress"></div>
+                        <div id="ticketCreationProgress"></div>
+                    </div>
+
+                    <div class="modal_content_center py-5 ticket_raised_success" style="display:none;">
+                        <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/success-icon.png" class="success_icon">
+                        <h4 class="mt-3">Ticket Raised Successfully</h4>
+                        <p>Our support expert will soon contact you</p>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer raise_ticket_card_footer">
+                    <a href="javascript:void(0);" type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</a>
+                                        <button type="submit" class="btn btn-primary" id="raise_ticket_success">Raise Ticket</button>
+                                    </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!--/Raise Ticket Modal-->
+
+
+<!--Livesession Enroll Modal-->
+<div class="modal fade" id="enroll_model" tabindex="-1" role="dialog" aria-labelledby="enroll_model" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white" id="enroll_model"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/ticket-icon.png" class="mr-2">Live Session - Enroll</h5>
+                <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal_content_center py-3 enroll_modal">
+                <i class="bi bi-bag-check"></i>
+                <h4 class="mt-3">Are you sure want to Enroll?</h4>
+                <p>You won't be able to revert this!</p>
+            </div>
+            <div class="loader py-3">
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                <p class="text-secondary mt-3">Loading ...</p>
+            </div>
+            <div class="modal_content_center py-3 enroll_success">
+                <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/success-icon.png" class="success_icon">
+                <h4 class="mt-3">Enroll Successfully</h4>
+                <p>You got Successfully got live access</p>
+            </div>
+            <div class="modal_content_center py-3 enroll_fail">
+                    <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/error_lg.png" class="fail_icon" >
+                    <h4 class="mt-3">Enroll Failed</h4>
+                    <p id="errormsgcnt" class="text-danger"></p>
+                </div>
+            <div class="modal-footer enroll_footer">
+                <button type="button" class="btn btn-outline-primary btn-xs" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-xs" id="enroll_live" data-loading-text="Loading...">Yes, enroll it !</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Livesession Enroll Modal-->
+
+<div class="modal fade" id="certificateLeadCapture" tabindex="-1" role="dialog" aria-labelledby="mentoringSessionLabel" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white">Fill these details, You will get Certificates Soon</h5>
+                <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          
+                <form action="https://lms.skill-lync.com/" id="certificateLeadCaptureForm" class="mb-0 form_style" method="post" accept-charset="utf-8">
+<input type="hidden" name="csrfToken" value="0ed8713104de65242e0402a56193e173" />                                     
+                <div class="modal-body long-model-minh">
+
+                    <div class=" pt-3 text-secondary">Dear Learner, Congratulations on completing the Industry 4.0 Course, we hope you had a fruitful learning experience with Skill-Lync </br></br>Please help us with the following details so that we can generate your certificate and share with you on Mail and WhatsApp
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label>First Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="FirstName" value="" placeholder="" required="">
+                            <label id="FirstName-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Last Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="LastName" value="" placeholder="" required="">
+                            <label id="LastName-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>College Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="CollegeName" value="" placeholder="" required="">
+                            <label id="CollegeName-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Branch <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="Branch" value="" placeholder="" required="">
+                            <label id="Branch-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Semester <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="Semester" value="" placeholder="" required="">
+                            <label id="Semester-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="EmailAddress" value="" placeholder="" required="">
+                            <label id="EmailAddress-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Country <span class="text-danger">*</span></label>                            
+                            <select class="form-control" name="Country" required="">
+                                <option value="">Select Country</option>
+                                                            </select>
+                            <label id="Country-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>Mobile <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="MobileNumber" value="" placeholder="" required="">
+                            <label id="MobileNumber-errorinvalid"></label>
+                        </div>
+                        <div class="col-md-12 mb-3"><p class="" id="certificateLeadResponse"></p></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-end gap-10">
+                    <a id="certificateClose" href="javascript:void(0);" type="button" class="btn btn-outline-primary btn-xs" data-dismiss="modal">Close</a>
+                    <button type="button" id="submitCertificateData" class="btn btn-primary btn-xs">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Enroll Now Confirm Modal-->
+<div class="modal fade" id="enroll_confirm_model" tabindex="-1" role="dialog" aria-labelledby="enroll_confirm_model"
+        aria-hidden="true">
+        <div class="modal-dialog modal_md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_head_bg">
+                    <h5 class="modal-title text-white" id="confirm_model_title"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/ticket-icon.png"
+                            class="mr-2"></h5>
+                    <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    
+                <div class="modal_content_center py-3 model_content">
+                    <i class="bi bi-bag-check"></i>
+                    <h4 id="confirmation_text" class="mt-3">Are you sure want to Enroll?</h4>
+                    <p>You won't be able to revert this!</p>
+                </div>
+                <div class="loader py-3"> 
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                    <p class="text-secondary mt-3">Loading ...</p>
+                </div>
+                <div id="confirm_resp" class="modal_content_center py-3 enroll_success">                    
+                    <p><span id="response_icon" class="success_icon"></span></p>
+                    <h4 id="callback_resptitle" class="mt-3"></h4>
+                    <p id="callback_respdesc" class="px-5"></p>
+                </div>
+                <div class="modal-footer enroll_footer">
+                    <button type="button" id="cancel_btn" class="btn btn-outline-primary btn-xs cancel_enroll" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="resp_btn" class="btn btn-outline-primary btn-xs" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="return enrollNow();" class="btn btn-primary btn-xs confirm_enroll" id="enroll_live"  data-loading-text="Loading...">Yes, Submit !</button>
+                </div>
+            </div>
+        </div>
+	</div>
+      <!--Enroll Now Confirm Modal-->
+<!--Enroll Now InProgress Modal-->
+<div class="loading_modal" style="display: none;" id="enroll_inprogress_model">
+      <div class="loading_modal_card">
+        <div class="loader py-3">
+          <div
+            class="spinner-border ml-auto"
+            role="status"
+            aria-hidden="true"
+          ></div>
+          <p id="loader_status" class="text-secondary mt-3">
+            Enrolling the course. Please wait...
+          </p>
+        </div>
+      </div>
+    </div>
+<!--Enroll Now InProgress Modal-->
+
+      <!--Linkedin Share Model-->
+   <div class="modal fade" id="linkedInShare" tabindex="-1" role="dialog" aria-labelledby="linkedInShareLabel"
+  aria-hidden="true">
+        <div class="modal-dialog modal_md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_head_bg">
+                    <h5 class="modal-title text-white" id="linkedInShareLabel"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/share_img.svg"
+                            class="mr-2">Share on LinkedIn</h5>
+                    <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="display:none" id="linkedin_card_popup" class="linkedin_card text-center ">
+                        <h6 class="my-4">Are you eager to expand your professional network and increase your job opportunities?</h6>
+                        <a id="linkedin-share-button" href="javascript:void(0)" target="_blank">  <Img src="Https://d2oda4j5uueq2i.cloudfront.net/myspace/961/shareonlinkedin_1683885861.png" alt="Share on LinkedIn"/></a>
+                        
+                    </div>
+                    <div style="display:none" id="linkedin_success_popup" class="modal_content_center py-5">
+                        <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/success-icon.png" class="success_icon">
+                        <h4 class="mt-3">Challenge Successfully Shared On LinkedIn</h4> 
+                    </div> 
+                    <div style="display:none" id="linkedin_failure_popup" class="modal_content_center py-5">
+                        <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/wrong-circle.png" class="success_icon">
+                        <h4 class="mt-3">Something went wrong</h4>
+                        <p id="linkedin_error_message">Try again later after sometime.</p>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+</div>
+   <!--Linkedin Share End-->
+   <!--Switch Batch Modal-->
+<div class="modal fade" id="switchbatch_modal" tabindex="-1" role="dialog" aria-labelledby="switchbatch" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white" id="raiseTicketLabel"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/ticket-icon.png" class="mr-2">Switch Batch</h5>
+                <button type="button" class="modal_close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="batch_lists">
+                    <div class="current_batch d-flex justify-content-between">
+                        <p class="m-0">SKILL-LYNC :: Skill Lync Batch 1 2023</p>
+                        <span class="sw_license_req mb-0">Active Batch</span>
+                    </div>
+                    <p class="card_title mt-3">Select other batch to switch</p>
+                    <div class="select_batch_to_switch">
+
+                        
+                    </div>
+                    <div id="switch_batch_alert"></div>
+                </div> 
+                <div class="modal_content_center py-5 switch_batch_success" style="display: none;">
+                    <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/success-icon.png" class="success_icon">
+                    <h4 class="mt-3">Batch switched successfully</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="modal-footer selectbatch_footer">
+                <p class="switch_batch_footer_question d-none">Are you sure want to switch the batch?</p>
+                <a href="javascript:void(0);" type="button" class="btn btn-outline-danger btn-xs" data-dismiss="modal">Cancel</a>
+                <button type="button" class="btn btn-primary btn-xs" id="yesswitchbatch" disabled="true" data-batchrefid=""> Yes, Switch Batch</button>
+            </div> 
+        </div>
+    </div>
+</div>
+<!--Switch Batch Modal-->
+
+<!-- Group Session Model-->
+
+<div class="modal fade bg-white" id="showgroupsessionmodel" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content shadow bd-0 tx-14">
+        <div class="modal-header bd-0 pd-b-0">
+            <h5 class="modal-title" id="supportModalLabel">Group Session</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li>Instant Access to live sessions</li>
+                <li>Join anytime</li>
+                <li>Clear your doubts</li>
+                <li>Drop anytime</li>
+            <ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="/groupsessions?courseId=0" class="btn btn-primary">View Sessions</a>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Group Session Model-->
+
+<!--Help Center Chat-->
+<div id="Helpcenterchat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="helpcenterchatModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog modal-confirm helpcenterchatmodal">
+        <div class="modal-content">
+            <div class="modal-header flex-column pb-0"> 
+                <h3 class="modal-title w-100">Welcome to Help Center</h3>
+                 <p class="mt-2">Choose from the options below, and their average response times</p>
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            </div>
+            <div class="modal-body pt-0">
+                <hr class="mb-0"/>
+                
+                                    <a href="javascript:void(0)"  type="button" class="btn w-100 tx-16 chat_with_agent d-none" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#EOSChatNotification" > <i class="bi bi-chat-square mr-2"></i>Chat with us</a>
+
+                    <p class="tx-12 mt-1 chat_with_agent d-none">Team responds <span>immediately</span></p>
+                
+                                    <a href="javascript:void(0)" type="button" class="btn w-100 tx-16" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target='#EOSTicketNotification'> <i class="bi bi-file-text mr-2"></i>Raise a Ticket</a>
+
+                    <p class="tx-12 mt-1">Team responds within <span>8 hours</span></p>
+                                
+                <a href="javascript:void(0)" type="button" class="btn w-100 tx-16" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#copyemail"> <i class="bi bi-envelope mr-2"></i>Write an email</a>
+
+                <p class="tx-12 mt-1">Team responds within <span>24 hours</span></p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Copy email-->
+<div id="copyemail" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="copyemailModalLabel"  aria-hidden="true">
+    <div class="modal-dialog modal-confirm copyemailmodal">
+        <div class="modal-content">
+            <div class="modal-header flex-column pb-0"> 
+                <h3 class="modal-title w-100">Write an email</h3>
+                <p class="mt-2">Our support team usually responds within <span>24 hours</span></p>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            </div>
+            <div class="modal-body pt-0">
+                <hr class="mb-0"/>
+                <div class="copyemailtext"><span id="emailtocopy">support@skill-lync.com </span><a onclick="javascript: coptytext('emailtocopy')"><i class="bi bi-files mr-2"></i>copy</a></div>
+                <span id="copytextsuccess" class="d-none mt-1 text-success text-left w-100 bi bi-check-circle"> text copied</span>
+                <p class="mt-3">Copy the email address and write your queries and concerns to the same. Our team will get back to you soon.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- EOS Chat Notification -->
+<div class="modal fade" id="EOSChatNotification" tabindex="-1" role="dialog" aria-labelledby="EOSNotification" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/alert_warning.png" class="mr-2">End of Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="text-white" aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Dear Learner,</p>
+                <p class="mt-3">Sorry, you're not an active customer of Skill-Lync right now and Chat service has been stopped.</p>
+            </div>
+            <div class="modal-footer py-1">
+                <button type="button" class="btn btn-primary btn-xs" id="EOSChatNotificationClose" data-dismiss="modal">Close</button>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- EOS Ticket Notification -->
+<div class="modal fade" id="EOSTicketNotification" tabindex="-1" role="dialog" aria-labelledby="EOSNotification" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/alert_warning.png" class="mr-2">End of Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="text-white" aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Dear Learner,</p>
+                <p class="mt-3">Sorry, you're not an active customer of Skill-Lync right now and Ticket service has been stopped.</p>
+            </div>
+            <div class="modal-footer py-1">
+                <button type="button" class="btn btn-primary btn-xs" id="EOSTicketNotificationClose" data-dismiss="modal">Close</button>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="EOSGroupSessionNotification" tabindex="-1" role="dialog" aria-labelledby="EOSNotification" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/alert_warning.png" class="mr-2">End of Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="text-white" aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Dear Learner,</p>
+                <p class="mt-3">Sorry, you're not an active customer of Skill-Lync right now and Live office service has been stopped.</p>
+            </div>
+            <div class="modal-footer py-1">
+                <button type="button" class="btn btn-primary btn-xs" id="EOSGroupSessionNotificationClose" data-dismiss="modal">Close</button>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="EOSMentorSessionNotification" tabindex="-1" role="dialog" aria-labelledby="EOSMentorSessionNotification" aria-hidden="true">
+    <div class="modal-dialog modal_md modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal_head_bg">
+                <h5 class="modal-title text-white"><img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/alert_warning.png" class="mr-2">End of Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="text-white" aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Dear Learner,</p>
+                <p class="mt-3">Sorry, you're not an active customer of Skill-Lync right now and Mentoring Session service has been stopped.</p>
+            </div>
+            <div class="modal-footer py-1">
+                <button type="button" class="btn btn-primary btn-xs" id="EOSMentorSessionNotificationClose" data-dismiss="modal">Close</button>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- Removed this once u used ur button -->
+<div class="modal fade" id="informationModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="informationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content confirmation_modal">
+            <div class="modal-body">
+                <div class="confirm_information">
+                    <i class="bi bi-info-circle"></i>
+                    <h6 class="mb-0 tx-14"> Enrolment exists! </h6>
+                </div>
+                  <div class="tx-14 refer_txt pt-1">
+                    You have enrolled for this course in another batch - <strong><span id="informationModelRedirect"></span></strong>. You will be redirected to that batch's course shortly!
+                </div>
+                 <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmationModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content confirmation_modal">
+            <div class="d-flex justify-content-between p-3 border-bottom">
+                <div class="confirm_warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <h6 class="tx-14 mb-0">  Already Enrolled! </h6>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                
+                <div class="tx-14 refer_txt pt-1">
+                    You have enrolled for this course in another account.<p class="mb-1 mt-1" id="redirectToAccountName"><a class="not-clickable" href="javascript:void(0);">LMS Stage</a></p>Click "Continue Learning" to access the course from that account.
+                    <div id="counter" class="text-center">
+                        <strong>
+                            <div id="enrollSeconds">00<span> Seconds</span></div>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal"> Cancel </button>
+                <a href="" id="redirectToAccount" class="btn btn-primary text-white" style="display: none;">Continue Learning</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar -->
+
+    <nav class="navbar navbar-expand fixed-top navbar-light bg-white topbar shadow flex-nowrap">
+        <!--mobile menu-->
+            <div class="d-block d-sm-none pr-1 mb_menu_switch"><i class="bi bi-list tx-20 text-black"></i></div>
+            <div class="mb_menu_container d-sm-none">
+                <div class="mb_menu_list mob_menu_ht">
+                    
+                    <div>
+                        <div class="mb_menu_switch d-flex justify-content-end text-white">
+                            <i class="bi bi-x-lg mb-3"></i>
+                        </div>
+                                                    <a href="/dashboard" class="side_menu "><i class="bi bi-house"></i> Home</a>
+                            <a href="/programs" class="side_menu "><i class="bi bi-mortarboard"></i> Programs</a>
+
+                                                        <a href="/mentoring-session" class="side_menu "><i class="bi bi-person-video3"></i> Mentoring
+                                Sessions</a>
+                                                        
+                                                        
+                            
+                                                        <a href="/help-center" class="side_menu "><i class="bi bi-chat-right-text"></i> Help
+                                Center</a>
+                                                        <a href="javascript:void(0)" class="side_menu d-none"><i class="bi bi-briefcase"></i> Career
+                                Services</a>
+                                                        <a href="/projects" class="side_menu active"><i class="bi bi-palette2"></i> Projects</a>
+                              
+                            <a href="/profile/personal" class="side_menu "><i class="bi bi-person-gear"></i> Profile</a>
+                                                        <a href="/certificates" class="side_menu "><i class="bi bi-patch-check"></i>
+                                Certificates</a>
+                                                    
+                            
+                                                        <a href="/software-license" class="side_menu "><i class="bi bi-briefcase"></i> Software License</a>
+                                            </div>
+                    <div>
+                        <div class="help_section " id="helpSectionMobile">
+                            <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/help_icon.png" alt="help_icon" />
+                            <p class="pl-2 mb-0">Help?</p>
+                        </div>
+                        <div class="mobile_copywrites">
+                            © 2023 Skill-Lync Inc. All Rights Reserved.
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!--end mobile menu-->
+                        							<div class="d-flex justify-content-center align-items-center topbar_company_logo">
+                                									<a href="/dashboard"><img class="login_b2b_client login_b2b_logo_lms-f0eo8" src="https://d2oda4j5uueq2i.cloudfront.net/myspace/1/Logo.png"></a>
+															</div>
+						        <!-- navbar -->
+        <div class="collapse navbar-collapse mobile_collapse_menu" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto justify-content-end align-items-center navbar-brand">
+                <!-- Nav Item - Alerts -->
+                                                    <div class="topbar-divider d-none d-sm-block"></div>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-bell"></i>
+                                            </a>
+                    <!-- Dropdown - Alerts -->
+                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in alert" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">
+                            Notifications
+                        </h6>
+                        <div class="top_noti_container">
+                                                        
+                            <div class="dropdown-item d-flex align-items-center justify-content-center">
+                                No new notifications found
+                            </div>
+                                                    </div>
+                        <a class="dropdown-item text-center small text-gray-500 show_all_notification" href="/notifications">Show All Notifications</a> 
+                    </div>
+                </li>
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Harinath</span>
+                        <img class="img-profile rounded-circle" src="https://lh3.googleusercontent.com/a-/AOh14GhEfXhrpg-5Z-WMFfp4yNVSwndjwhuv5YOJRo42tek=s96-c" onerror="this.src='https://d3ocdjih6hdmey.cloudfront.net/assets/images/sk_shot_logo.jpg'" alt="Harinath">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="/dashboard"><i class="bi bi-house"></i>
+                        Home</a>
+                        <a class="dropdown-item" href="/programs"><i class="bi bi-mortarboard"></i>
+                        Programs</a>
+
+                        
+                                                <a class="dropdown-item" href="/help-center/open-tickets"><i class="bi bi-chat-right-text"></i>
+                            Help Center</a>
+                                                                        <a class="dropdown-item" href="/projects"><i class="bi bi-palette2"></i>
+                            Projects</a>
+                                                                        <a class="dropdown-item" href="/profile/personal"><i class="bi bi-person-gear"></i>
+                            Profile</a>
+                                                
+                        <a class="dropdown-item d-none" href="javascript:void(0)"><i class="bi bi-door-open"></i> Exclusive
+                            Jobs</a>
+                                                <a class="dropdown-item" href="/certificates"><i class="bi bi-patch-check"></i>
+                            Certificates</a>
+                                                                        
+                        
+                                                <a class="dropdown-item" href="/billsandinvoices"><i class="bi bi-receipt"></i> Billing</a>
+                                                
+                                                <a class="dropdown-item d-sm-block d-md-none">
+                            <div
+                                class="d-flex align-items-center justify-content-between d-none d-sm-block d-md-none border-top pt-2">
+                                <div class="img-rm-xs text-center border-right">
+                                    <p class="tx-10 mb-0">Your Relationship Manager</p>
+                                    <p class="py-1 mb-0"><img src="https://lh3.googleusercontent.com/a/ACg8ocIiGEOataphaOE3QPT8-DbqSp1BWNjdQF9hwmmoP9P0wI0B5xE=s96-c" alt="Sadhana" class="rm_img rounded-circle"/></p>
+                                    <p class="text-secondary tx-10 mb-0"> <span>Sadhana</span></p>
+                                </div>
+                                <div class="rm-deti-xs px-1">
+                                    <p class="text-secondary">
+                                        <i class="bi bi-telephone"></i>
+                                        <span>+918046161791</span>
+                                    </p>
+                                                                        <p class="text-secondary">
+                                        <i class="bi bi-calendar"></i>
+                                        <span>Monday - Friday</span>
+                                    </p>
+                                    <p class="text-secondary">
+                                        <i class="bi bi-clock"></i>
+                                        <span>11:00 AM - 8:00 PM (IST)</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </a>
+                                                <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#LogoutModal" class="trigger-btn" data-toggle="modal">
+                            <span class="btn btn-outline-primary w-100">Logout</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>    
+    </nav>
+       
+<!-- End of Topbar -->
+<!-- <script src="https://cdn.tiny.cloud/1/vzqbamboftfb4tj3uijj7lq9m50riujojiy2y5clux1nwz60/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
+<!-- <script src="https://cdn.tiny.cloud/1/vzqbamboftfb4tj3uijj7lq9m50riujojiy2y5clux1nwz60/tinymce/4.6.6/tinymce.min.js" referrerpolicy="origin"></script> -->
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/mathsymbols-tinymce-plugin@0.0.3/plugin.min.js"></script> -->
+
+<section class="pt-5 mt-2">
+
+    <div class="row">
+
+        <!--left side menu -->
+
+<div class="col-md-2 p-0 bg_dark_blur left_scroll">
+    <div class="left-sidebar justify-content-between">
+        <div>
+            <a href="/dashboard" class="side_menu "><i class="bi bi-house"></i> Home</a>
+
+            <a href="/programs" class="side_menu "><i class="bi bi-mortarboard"></i> Programs</a>
+
+            
+                        <a href="/mentoring-session" class="side_menu "><i class="bi bi-person-video3"></i> Mentoring Sessions</a>
+                        
+                        
+            
+                        <a href="/help-center/open-tickets" class="side_menu "><i class="bi bi-chat-right-text"></i> Help Center</a>
+                                        <a href="/projects" class="side_menu active"><i class="bi bi-palette2"></i> Projects</a>
+            
+                            <a href="/profile/personal" class="side_menu "><i class="bi bi-person-gear"></i> Profile</a>
+                                    <a href="/certificates" class="side_menu "><i class="bi bi-patch-check"></i> Certificates</a>
+            
+                                    <a href="/software-license" class="side_menu "><i class="bi bi-briefcase"></i> Software License</a>
+            
+        </div>
+        
+        <div class="left_nav_bottom">
+            <div class="help_section " id="helpSection">
+                <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/help_icon.png" alt="help_icon" />
+                <p class="pl-2 mb-0">Help?</p>
+            </div>
+                        <div class="copywrites">
+                © 2024 Skill-Lync Inc. All Rights Reserved.
+            </div>
+                    </div>
+    </div>
+    
+</div> 
+        <div class="col-md-10 px-0">
+                    
+            <div class="row m-0 pr-2">
+                <div class="col-md-9 programs_tab_container">
+                <div class="my-2" id="displaybanner"> </div>
+                    <div class="d-flex align-items-center justify-content-between card_lms mb-3">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h3 class="page_title">Fender Design - Wheel Arch Challenge</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+                            <li class="breadcrumb-item"><a href="/projects/66632/edit">Fender Design - Wheel Arch Challenge</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Details</li>
+                        </ol>
+                    </nav>
+					<div class="d-flex project_card">
+                        <div>
+                                                        <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/sk_shot_logo.jpg" alt="" />
+                        </div>
+                        <div class="project_card_container">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <p class="pro_list_short_description mb-0"> Using the Europian Standards Discussed for WHEEL ARC : &nbsp; &nbsp; TABULATED DATA: &nbsp; LINE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OSERVED CLEARENCE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#8230;</p>
+                                <p class="project_status project_published">public</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="pro_list_domain"><span>Domain </span> - <span> </span></p>
+                                    <p class="pro_list_domain"><span>Sub Domain </span> - <span></span></p>
+                                </div>
+                                 <div class="project_action"> 
+                                        <a href="https://skill-lync.com/projects/fender-design-wheel-arch-challenge-85" class="" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                                </div> 
+                            </div>
+                        </div>   
+                    </div>
+                    <form class="project_form" id="projectDetailForm">
+                        
+                       <input type="hidden" class="form-control"  name="ProjectID" value="66632" >
+                        
+					    
+					   <div class="form-group descshow">
+                            <label for="Description">Project In Details <span class="text-danger">*</span></label>
+                            <textarea id="projectdescr" name="ProjectDescription"><p><strong><u>Using the Europian Standards Discussed for WHEEL ARC :</u></strong></p>
+<p>&nbsp;</p>
+<p><img src="https://sklc-tinymce-2021.s3.amazonaws.com/comp/2022/01/mceclip2_1641454074.png" width="1021" height="456" /></p>
+<p>&nbsp;</p>
+<p><strong>TABULATED DATA:</strong></p>
+<p>&nbsp;</p>
+<p><strong>LINE</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>OSERVED CLEARENCE</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>REQUIRED CLEARENCE&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>RESULT&nbsp; &nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>REASON FOR RESULT</strong>&nbsp;</p>
+<p>SA&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9.949&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PASS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wheel line INSIDE the fender line within the rage of required clearence.</p>
+<p>SB&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PASS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wheel lines INSIDE the fender line within the range of required clearence.</p>
+<p>SC&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -0.113&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FAIL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wheel lies OUSIDE the fender line.</p>
+<p>SD&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-2.879&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FAIL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wheel lies OUTSIDE the fender line.</p>
+<p>SE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-5.953&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FAIL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wheel lies OUTSIDE the fender line.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>CONCLUSION:</strong></p>
+<p>From the above calculation, we understand that the fender does not comply within the European regulations. Hence the component has to be redesigned by the styling Department before it undergoes full development and production.</p></textarea>
+                        </div>
+                        <div  id="errormsg">	
+                        </div>
+                        <div class="d-flex justify-content-end gap-10"> 
+                            <a href="/projects" class="btn btn-danger btn-xs">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-xs detailsSubmit">Save</button>
+                        </div>
+                        </form>
+
+                </div>
+                
+                <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
+<!--right side menu -->
+<div class="col-md-3  px-0">
+    <div class="right-sidebar">
+                            <div class="links_list refer_bg mb-3 mt-1">
+                    <div class="refer_image">
+                        <img src="https://d3ocdjih6hdmey.cloudfront.net/assets/images/referfrndlog.png" alt="refer_img">
+                    </div>
+                    <div class="refer_title">
+                        Refer your friends & Earn Rs. 5,000
+                    </div>
+                    <div class="refer_txt">
+                        Help your friends kick-start their careers with Skill-Lync!
+                        Earn Rs. 5000 today.
+                    </div>
+                    <a  href="https://skill-lync.com/mlp/referral-program?utm_source=Student-Referral-Button" target="_blank" class="continue text-primary tx-14" >Refer now <i
+                            class="bi bi-arrow-right ml-2"></i></a>
+                </div>
+            
+            <div class="new_course_access mb-3 d-none">
+                <div class="new_course_access_title"> New Course Access!
+                </div>
+                <div class="new_cou_desc">
+                    New course unlocked. Get started now, to be the first to complete the course.
+                </div>
+            </div>
+
+                        <div class="links_list p-3 mb-3">
+                                    <a href="javascript:void(0);" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#EOSMentorSessionNotification"  class="mentoring_session mb-3"> <i class="bi bi-chat-square-text"></i>Request Mentoring Session</a>
+            
+                        <!--a href="javascript:void(0)" data-toggle="modal" data-target="#RaiseTicketModal" class="mentoring_session mb-3"> <i class="bi bi-ticket-perforated"></i> Create Ticket </a-->
+                        
+                        <a href="javascript:void(0)" class="mentoring_session" id="helpmodalbox" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target='#Helpcenterchat'><i class="bi bi-ticket-perforated"></i>Create Ticket</a>
+            
+            </div> 
+                        <div id="livesessionbatch">
+
+            </div>
+            
+            <div class="links_list mb-3 d-none">
+                <p class="mb-0 border-bottom"><i class="bi bi-people tx-16"></i> Forum groups</p>
+                <ul>
+                    <li><a href="javascript:void(0)">Crashworthiness Analysis using Hyper Mesh and Radioss</a>
+                    </li>
+                    <li><a href="javascript:void(0)">Crashworthiness Analysis using HyperMesh and Radioss - FFE</a></li>
+                </ul>
+            </div>
+            <div class="links_list d-none">
+                <p class="mb-0">Your Status</p>
+                <div class="score_status ">
+                    <span>You have scored</span>
+                    <p class="complete_status">4</p>
+                    <span>Keep going !</span>
+                </div>
+
+            </div>
+
+            <div class="links_list refer_bg mb-3 mt-1 accountstatus d-none">
+              
+            </div>
+    </div>
+</div>
+<!--end right side menu -->
+<script>
+var courseID=0;
+var batchID=0;
+var documentID=0;
+var customerID='3915';
+$(function() {
+
+    loadlivesessionbatches();
+
+
+     $(".loader").hide();
+     $(".enroll_success").hide();
+     $(".enroll_fail").hide();
+
+    $(document).on('click', '.enrollment_batch', function(e) {
+        
+		documentID = $(this).data('documentid');
+		courseID =$(this).data('courseid');
+		batchID =$(this).data('batchid');	
+	});
+
+    $("#enroll_live").click(function(){       
+        $(".loader").show();
+        $(".enroll_modal").hide();
+        $('.enroll_footer').hide();
+        addenrollemntforlivesession(courseID,batchID);   
+     });
+
+     getPurchaseExpiry();
+
+});
+
+function getPurchaseExpiry() {
+    $.ajax({
+        url: '/programs/getPurchaseExpiry',
+        method: 'post',
+        cache: false,
+        data: {
+            [CSRFToken]: CSRFHash
+        },
+        success: function(response) {
+            if(response.Error==false){
+                if(response.AccountStatusInfo['AccountStatus']>0){
+                    $('.accountstatus').removeClass('d-none');
+                    $('.accountstatus').html('<div class="refer_title pt-0 mb-2">Account Status</div><div class="alert '+response.AccountStatusInfo['AccountStatusCss']+' px-3 py-1 d-inline rounded-pill" role="alert">'+response.AccountStatusInfo['AccountStatusLabel']+'</div><div class="refer_txt mt-2 pb-0">'+response.AccountStatusInfo['AccountStatusText']+'</div> ');
+                }
+            }
+        }
+    });
+}
+
+</script>
+<script src="/js/liveclasses.js"></script>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/trumbowyg.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/plugins/upload/trumbowyg.upload.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/plugins/mathml/trumbowyg.mathml.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/plugins/table/trumbowyg.table.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typesense@1/dist/typesense.min.js"></script>
+<script>
+    var CSRFToken = 'csrfToken';
+    var CSRFHash = '0ed8713104de65242e0402a56193e173';
+    var onboardingStatus = 1;
+    var TwakChatAvailable = 1;
+    var EndOfServiceAvailable  = 0;
+    
+    var bizType = 'B2C';
+
+    $(function() {
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $(document).on('click', ".select_batch_to_switch label", function(e) {
+            //e.preventDefault();
+            $('#yesswitchbatch').data('batchrefid', $('#' + $(this).attr('for')).val());
+            $('#yesswitchbatch').prop("disabled", false);
+        });
+
+        $(document).on('click', "#yesswitchbatch", function(e) {
+            //e.preventDefault();
+            $('#yesswitchbatch').attr('disabled', true);
+            switchBatch($(this).data('batchrefid'));
+        });
+
+    });
+
+    function switchBatch(BatchRefID) {
+        showInlineAlert('switch_batch_alert', 'info', "Processing please wait...", true, false);
+        $.ajax({
+            url: '/oauth/switchBatch',
+            method: 'post',
+            cache: false,
+            data: {
+                BatchRefID: BatchRefID,
+                [CSRFToken]: CSRFHash
+            },
+            success: function(response) {
+                $('#yesswitchbatch').attr('disabled', false);
+                if (response.Error) {
+                    showInlineAlert('switch_batch_alert', 'danger', response.Message, false, false);
+                } else {
+                    $('#switch_batch_alert').html('');
+                    $(".batch_lists").hide();
+                    $(".selectbatch_footer").hide();
+                    $(".switch_batch_success").show();
+                    window.location.href = '/dashboard';
+                }
+            },
+            error: function(xhr) {
+                showInlineAlert('switch_batch_alert', 'danger', "Error: Something went wrong.", false, false);
+            }
+        });
+    }
+
+    function showInlineAlert(divid, type, message, is_loading, is_dismissable) {
+
+        var icon;
+        var dismissable = '';
+        var alert_dismiss;
+
+        if (is_dismissable) {
+
+            alert_dismiss = 'alert-dismissible';
+            dismissable = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
+        }
+
+        if (is_loading) {
+
+            icon = '<i class="bi bi-arrow-clockwise bi-spin"></i>';
+        } else {
+
+            if (type == "success") {
+                icon = '<i class="bi bi-check-circle"></i>';
+            } else if (type == "warning") {
+                icon = '<i class="bi bi-exclamation-circle"></i>';
+            } else if (type == "danger") {
+                icon = '<i class="bi bi-exclamation-circle"></i>';
+            } else if (type == "info") {
+                icon = '<i class="bi bi-info-circle"></i>';
+            }
+        }
+
+        $("#" + divid).html('<div class="mt-3 alert alert-' + type + ' ' + alert_dismiss + '" role="alert">' + dismissable + ' ' + icon + ' ' + message + '</div>');
+
+    }
+	
+	function showInLineAlertMessage(divref, type, message, is_loading, display = false) {
+        $(divref).removeClass('d-none');
+        if(display) {
+            $(divref).addClass('d-none');
+        }
+        var icon;
+        if (is_loading) {
+            icon = '<i class="fa fa-spinner fa-pulse mg-r-10"></i>';
+        } else {
+            if (type == "success") {
+                icon = '<i class="fa fa-check-circle mg-r-10"></i>';
+            } else if (type == "warning") {
+                icon = '<i class="fa fa-exclamation-triangle mg-r-10"></i>';
+            } else if (type == "danger") {
+                icon = '<i class="fa fa-exclamation-triangle mg-r-10"></i>';
+            } else if (type == "info") {
+                icon = '<i class="fa fa-flash mg-r-10"></i>';
+            }
+        }
+        $(divref).removeClass('alert alert-danger').removeClass('alert alert-success');
+        $(divref).html('<div class="alert alert-' + type + '" fade show>' + icon + ' ' + message + '</div>');
+    }
+	
+    //mouse over details to show the rm,alerts,profil menu options
+    function toggleDropdown(e) {
+        const _d = $(e.target).closest('.dropdown'),
+            _m = $('.dropdown-menu', _d);
+        setTimeout(function() {
+            const shouldOpen = e.type !== 'click' && _d.is(':hover');
+            _m.toggleClass('show', shouldOpen);
+            _d.toggleClass('show', shouldOpen);
+            $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+        }, e.type === 'mouseleave' ? 300 : 0);
+    }
+
+    $('body')
+        .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
+        .on('click', '.dropdown-menu a', toggleDropdown);
+    //end mouse over details to show the rm,alerts,profil menu options
+    //Mobile menu script//
+    $(".mb_menu_switch").click(function() {
+        $(".mb_menu_container").toggleClass("d-block");
+    });
+
+    loadbanner();
+    
+    function getTypeSenseConnection(){
+        return client = new Typesense.Client({
+            'nodes': [{
+                'host': 'typesense.skill-lync.com', // For Typesense Cloud use xxx.a1.typesense.net
+                'port': '8108',      // For Typesense Cloud use 443
+                'protocol': 'https'   // For Typesense Cloud use https
+            }],
+            'apiKey': 'yhUtNjkiRxOGo4SsXeqOaaWtm272tv51',
+            'connectionTimeoutSeconds': 2
+        })
+    }
+
+    function loadbanner(){
+        let client = getTypeSenseConnection();
+
+        let searchParameters = {
+                'q'         : '*',
+                'query_by'  : 'Title',
+                'filter_by' : 'Status:=1 && BusinessType:='+bizType,
+            }
+        
+        let myPromise = new Promise(function(myResolve, myReject) {
+            myResolve(
+                client.collections('LMSBanner').documents().search(searchParameters).then((data)=>{
+                    return data;
+                }, (err)=>{
+                    // console.log(err);
+                })
+            );
+        }).then((value) => {
+            // console.log(value);
+            if(value !== undefined){
+                var bannerData = value;
+                if(bannerData.hits.length > 0){
+                    var bannerHtml='';
+                    if(bannerData.hits[0].document){
+                        let banner=bannerData.hits[0].document;
+                        const curtime = moment(new Date()).format('X');
+                        if(curtime>=banner.StartDateTime && curtime<=banner.EndDateTime){
+                            bannerHtml = atob(banner.Content);
+                            $('#displaybanner').html(bannerHtml);
+                            $('#displaybanner').addClass(banner.BannerType);
+                        }else{
+                            $('#displaybanner').html('');
+                        }
+                    }
+
+                }
+
+            }
+            
+        });
+
+    }
+
+function loadlivesessionbatches(){
+    let client = getTypeSenseConnection();
+		
+    let searchParameters = {
+            'q'         : 'EnrollmentNotification',
+            'query_by'  : 'Type',
+            'filter_by' : 'CustomerID:='+customerID 
+        }
+
+    let myPromise = new Promise(function(myResolve, myReject) {
+        myResolve(
+            client.collections('LivesessionParticipants').documents().search(searchParameters).then((data)=>{
+                return data;
+            }, (err)=>{
+                // console.log(err);
+            })
+        );
+    }).then((value) => {
+        if(value !== undefined){
+            var livebatches = value;
+            if(livebatches.hits.length > 0){
+                var batchhtml='';
+                $.each(livebatches.hits, function(i,row){
+                   let batch=row.document;
+                    
+            var batchDate = moment(new Date(batch.BatchStartDate)).format("X"); 
+            var currentdate = '1732040999';
+                    
+                    if(batchDate>currentdate){
+                        batchhtml +='<div class="liveclass_course enroll_live_bg mb-3" id="documentid_'+batch.id+'"><p class="enroll_live_title"> '+batch.CourseTitle+' - '+batch.BatchTitle+'</p><div class="enroll_live_desc"><i class="bi bi-calendar4 mr-1"></i> Batch Duration :'+batch.BatchStartDate+' To '+batch.BatchEndDate+'</div><a class="btn-xs card_btn enrollment_batch" href="#enroll_model" data-toggle="modal" data-documentid="'+batch.id+'" data-courseid="'+batch.CourseID+'" data-batchid="'+batch.BatchID+'">Enroll now <iclass="bi bi-arrow-right ml-2"></i></a></div>';
+                    }
+                  })
+
+                  $('#livesessionbatch').html(batchhtml);
+
+            }
+
+        }
+        
+        
+    });
+
+}
+    //end Mobile menu script//
+</script>
+
+<script src="/js/helpcenter/createticket.js"></script>
+
+
+<script>
+    function coptytext(id){
+            var copyText = $('#'+id).html();
+            navigator.clipboard.writeText(copyText);
+            $('#copytextsuccess').removeClass('d-none');
+            $('#copytextsuccess').addClass('d-block');
+    }
+    function initiateTrumbowyg(element){
+        
+        $(element).trumbowyg(
+          {
+            btns: [
+              // ['viewHTML'],
+              ['undo', 'redo'], // Only supported in Blink browsers
+              ['formatting'],
+              ['strong', 'em', 'del'],
+              ['superscript', 'subscript'],
+              ['link'],
+              ['insertImage','upload'],
+              ['table'],
+              ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+              ['unorderedList', 'orderedList'],
+              ['horizontalRule'],
+              ['removeformat'],
+              // ['mathml'],            
+              ['fullscreen']         
+            ],
+            plugins: {
+              upload: {
+                  serverPath: '/helper/fileupload',
+                  fileFieldName: 'tinymcefile',
+                  data: [
+                      {
+                          name: CSRFToken,
+                          value: CSRFHash
+                      }
+                  ],
+                  headers: {
+                     'X-CSRF-TOKEN': CSRFToken
+                  },
+                  urlPropertyName: 'FilePath',
+                  statusPropertyName:'Success',
+                  xhrFields: {
+                      withCredentials: true
+                  }
+              }
+            }
+          }
+        );
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            }
+        });
+      }
+</script>
+<script src="/js/onboardingCarousel.js"></script>
+<script>
+$(document).ready(function() {
+    $(document).on('click', '#helpmodalbox', function() {
+        $(".modal-backdrop").eq(0).removeClass("show");  
+        $(".modal-backdrop").css("display", "none");
+    });
+});
+</script>        <script>
+            var projectnames = {
+                valueNames: ['projecttitle']
+            };
+            var projectList = new List('projectListTitle', projectnames); 
+        </script>
+    </body>
+
+</html><script>
+// var Description = 'https://dg2bpyzc0qho7.cloudfront.net/projects/2022/3915/66632.txt';
+$(function() {
+
+	initiateTrumbowyg('#projectdescr');
+
+    $('#projectDetailForm').submit(function(e){
+        e.preventDefault();
+        saveProjectDetails();
+       
+    });
+
+   
+	// if(Description!=''){
+    //     debugger;
+	// 	$.get(Description, function( data ) {
+    //         console.log(data);
+    //         $('#projectdescr').html(data);
+	// 		tinyMCE.activeEditor.setContent(data);
+	// 	});
+    // }
+    
+
+});
+   
+    /*function initTinyMCE(){
+        setTimeout(function () {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }, 1000);
+        tinymce.init({
+        selector: '#projectdescr',
+        height: 500,
+        external_plugins: {'mathSymbols': 'js\tinymce\tinymcemath-plugin.min.js'},
+        menubar: true,
+        relative_urls: false,
+        remove_script_host: false,
+        plugins: [
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'help', 'wordcount','textcolor' ,'codesample code'
+        ],
+         codesample_languages: [
+        {text: 'HTML/XML', value: 'markup'},
+        {text: 'JavaScript', value: 'javascript'},
+        {text: 'CSS', value: 'css'},
+        {text: 'PHP', value: 'php'},
+        {text: 'Ruby', value: 'ruby'},
+        {text: 'Python', value: 'python'},
+        {text: 'Java', value: 'java'},
+        {text: 'C', value: 'c'},
+        {text: 'C#', value: 'csharp'},
+        {text: 'C++', value: 'cpp'},
+        { text: 'MATLAB', value: 'matlab' },
+      ],
+        toolbar: 'bold italic underline | strikethrough | searchreplace | forecolor backcolor help | bullist numlist | codesample code | link | image | media | table | fullscreen | charmap | mathSymbols',
+        images_upload_url: '/helper/fileupload',
+        paste_data_images: true,
+        automatic_uploads: true,
+        images_upload_handler: function (blobInfo, success, failure) {
+            $(".detailsSubmit").attr("disabled", true);
+            $(".detailsSubmit").html('<i class="fa fa-spinner mg-r-5"></i> Processing');
+            var xhr, formData;
+            xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', '/helper/fileupload');
+
+            xhr.upload.onprogress = (e) => {
+            // progress(e.loaded / e.total * 100);
+            };
+
+            xhr.onload = () => {
+            if (xhr.status === 403) {
+                failure({ message: 'HTTP Error: ' + xhr.status, remove: true });
+            return;
+            }
+
+            if (xhr.status < 200 || xhr.status >= 300) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+
+            const json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.FilePath != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+
+            success(json.FilePath);
+
+            $(".detailsSubmit").attr("disabled", false);
+            $(".detailsSubmit").html("Save");
+
+            };
+
+            xhr.onerror = () => {
+            failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+            };
+
+            formData = new FormData();
+            formData.append('tinymcefile', blobInfo.blob(), blobInfo.filename());
+            formData.append(CSRFToken, CSRFHash);
+            xhr.send(formData);
+        },
+        setup: function(editor) {
+            editor.on('change', function() {
+            editor.save();
+
+            });
+        },
+        branding: false
+        });
+}*/
+
+
+</script>
+<script src="/js/projects.js"></script>
